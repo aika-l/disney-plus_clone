@@ -3,9 +3,15 @@ import { Counter } from './features/counter/Counter';
 import './App.css';
 import Header from './components/Header'
 import Home from './components/Home'
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import Detail from './components/Detail';
-import Login from './components/Login';
+import Detail from './components/Detail'
+import Login from './components/Login'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 
 function App() {
   return (
@@ -13,19 +19,17 @@ function App() {
       <Router>
         <Header />
         <Switch>
-          <Route path='/login'>
+          <Route path="/login">
             <Login />
           </Route>
-          <Router path='/detail'>
+          <Route path="/detail">
             <Detail />
-          </Router>
-          <Route path='/'>
+          </Route>
+          <Route path="/">
             <Home />
           </Route>
         </Switch>
       </Router>
-      
-      
     </div>
   );
 }
