@@ -54,9 +54,12 @@ function Header() {
             })
     }
 
+    const goHomePage = () => {
+        history.push('/')
+    }
     return (
         <Nav>
-          <Logo src='/images/logo.svg' />
+          <Logo src='/images/logo.svg' onClick={goHomePage}/>
           { !userName ?
             <LoginContainer>
               <Login onClick={signIn}>Login</Login> 
@@ -66,7 +69,7 @@ function Header() {
                     <NavMenu>
                         <a>
                             <img src='/images/home-icon.svg' />
-                            <span>HOME</span>
+                            <span onClick={goHomePage}>HOME</span>
                         </a>
                         <a>
                             <img src='/images/search-icon.svg' />
@@ -109,6 +112,7 @@ const Nav = styled.div`
 `;
 const Logo = styled.img`
     width: 80px;
+    cursor: pointer;
 `;
 const NavMenu = styled.div`
     display: flex;
